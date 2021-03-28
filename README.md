@@ -4,7 +4,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Development server
 
-1. Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+1. Run `ng serve` for a dev server. Navigate to `http://localhost:4200/` (or issue `npm install` then `npm start` in a bash shell). The app will automatically reload if you change any of the source files.
 
 2. In file src\app\services\diary.service.ts make sure that the hardcoded endpoints correct e.g. localhost:7001/api/diary/xxxx  (for enhancement)
 
