@@ -1,0 +1,18 @@
+<div class="diary-share">
+  <label>Share to: </label>
+  <nz-select
+    nzShowSearch
+    nzAllowClear
+    nzPlaceHolder="Select a friend"
+    [(ngModel)]="selectedValue"
+  >
+    <nz-option
+      *ngFor="let user of users"
+      [nzLabel]="user.name"
+      [nzValue]="user.id"
+    ></nz-option>
+  </nz-select>
+  <button class="btn-share" nz-button nzType="primary" (click)="onShareEntry()">
+    Share
+  </button>
+</div>

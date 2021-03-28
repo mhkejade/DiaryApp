@@ -1,0 +1,9 @@
+<div class="diary-list">
+  <app-diary-item
+    isSummary="true"
+    *ngFor="let diary of diaries"
+    [diary]="diary"
+    (onSelectItem)="onSelect($event)"
+    (onDeleteItem)="onDelete($event)"
+  ></app-diary-item>
+</div>

@@ -1,0 +1,26 @@
+.diary-item {
+  width: 100%;
+  background-color: white;
+  padding: 20px;
+  cursor: pointer;
+  margin-bottom: 10px;
+  .heading {
+    margin-bottom: 10px;
+    .title {
+      margin-bottom: 2px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .posted-date {
+      color: #b3b3b3;
+      font-size: 12px;
+    }
+  }
+  .shortened-content {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+}

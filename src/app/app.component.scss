@@ -1,0 +1,27 @@
+.layout {
+  min-height: 100vh;
+  .branding {
+    color: white;
+    font-weight: bold;
+  }
+  .content {
+    padding: 20px 150px;
+  }
+  .new-entry {
+    margin-bottom: 15px;
+  }
+  .filter {
+    margin-bottom: 20px;
+  }
+  .empty-entry {
+    width: 100%;
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .entry-container {
+    padding: 20px;
+    background-color: white;
+  }
+}

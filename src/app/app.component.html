@@ -1,0 +1,54 @@
+<nz-layout class="layout">
+  <nz-header>
+    <div class="branding">Diary App</div>
+  </nz-header>
+  <nz-content class="content">
+    <div nz-row [nzGutter]="30">
+      <div nz-col nzSpan="12">
+        <div class="new-entry">
+          <button nz-button nzType="primary" (click)="onCreateNewEntry()">
+            New Entry
+          </button>
+        </div>
+        <div class="filter">
+          <nz-input-group nzSearch nzSize="large" [nzAddOnAfter]="suffixButton">
+            <input
+              type="text"
+              nz-input
+              placeholder="Search for entry"
+              [(ngModel)]="searchQuery"
+            />
+          </nz-input-group>
+          <ng-template #suffixButton>
+            <button
+              nz-button
+              nzType="primary"
+              nzSize="large"
+              nzSearch
+              (click)="onSearchDiary()"
+            >
+              Search
+            </button>
+          </ng-template>
+        </div>
+        <app-diary-list
+          [diaries]="$diaries | async"
+          (onSelectDiary)="onSelectDiary($event)"
+          (onDeleteDiary)="onDeleteDiary($event)"
+        ></app-diary-list>
+      </div>
+      <div nz-col nzSpan="12">
+        <div class="entry-container">
+          <div *ngIf="selectedDiaryId === null" class="empty-entry">
+            <h2>Select any entry to view</h2>
+          </div>
+          <app-diary-form *ngIf="selectedDiaryId === 0"></app-diary-form>
+          <app-diary-item
+            *ngIf="!!selectedDiaryId"
+            [diary]="$selectedDiary | async"
+          ></app-diary-item>
+        </div>
+      </div>
+    </div>
+  </nz-content>
+</nz-layout>

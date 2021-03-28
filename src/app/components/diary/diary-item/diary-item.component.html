@@ -1,0 +1,32 @@
+<div class="diary-item" (click)="onSelect(diary)">
+  <div class="heading">
+    <h2 class="title">
+      <span>{{ diary?.title }}</span>
+      <button
+        nz-button
+        nzSize="small"
+        nzType="primary"
+        (click)="onDelete($event)"
+        *ngIf="isSummary"
+      >
+        Delete
+      </button>
+    </h2>
+    <div class="posted-date">
+      {{ diary?.creationTime | date: "MMMM dd, yyyy, h:mm a" }}
+    </div>
+  </div>
+  <div [ngClass]="isSummary ? 'shortened-content' : ''">
+    {{ diary?.content }}
+  </div>
+  <nz-divider class="divider"></nz-divider>
+  <div nz-row>
+    <div nz-col nzSpan="12">Author: {{ diary?.author }}</div>
+    <div nz-col nzSpan="12">
+      Shared To Friends: {{ diary?.sharedToFriends }}
+    </div>
+  </div>
+  <div nz-row *ngIf="!isSummary">
+    <app-diary-share [entryId]="diary.entryId"></app-diary-share>
+  </div>
+</div>

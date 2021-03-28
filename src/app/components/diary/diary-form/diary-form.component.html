@@ -1,0 +1,30 @@
+<div class="diary-form">
+  <form [formGroup]="form" nz-form (ngSubmit)="onSubmit()">
+    <nz-form-item>
+      <nz-form-control nzHasFeedback nzErrorTip="Title is required">
+        <input
+          nz-input
+          name="title"
+          formControlName="title"
+          required
+          placeholder="Title"
+        />
+      </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+      <nz-form-control nzHasFeedback nzErrorTip="Title is required">
+        <textarea
+          nz-input
+          name="content"
+          formControlName="content"
+          required
+          rows="10"
+          placeholder="Content"
+        ></textarea>
+      </nz-form-control>
+    </nz-form-item>
+    <button class="btn-save" nz-button nzType="primary" nzSize="large">
+      Add New Entry
+    </button>
+  </form>
+</div>
