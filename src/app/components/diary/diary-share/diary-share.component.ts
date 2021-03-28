@@ -16,11 +16,11 @@ export class DiaryShareComponent {
     },
     {
       id: 2,
-      name: 'Mark',
+      name: 'Mae',
     },
     {
       id: 3,
-      name: 'Elmer',
+      name: 'Mark',
     },
   ];
   selectedValue: number = null;

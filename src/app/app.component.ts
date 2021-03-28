@@ -11,12 +11,17 @@ export class AppComponent implements OnInit {
   selectedDiaryId: number | null = null;
   searchQuery: string = '';
   $diaries: Observable<Diary[]>;
-  $selectedDiary: Observable<Diary>;
+  selectedDiary: Diary;
 
   constructor(private diaryService: DiaryService) {}
 
   ngOnInit() {
-    this.$diaries = this.diaryService.getDiaries();
+    this.$diaries =  this.diaryService.getDiaries();
+    // this.diaryService.getDiaries().subscribe(
+    //   (data) => {
+    //     debugger
+    //   }
+    // ) ;
   }
 
   onCreateNewEntry() {
@@ -25,7 +30,7 @@ export class AppComponent implements OnInit {
 
   onSelectDiary(diary: Diary) {
     this.selectedDiaryId = diary.entryId;
-    this.$selectedDiary = this.diaryService.getDiary(this.selectedDiaryId);
+    this.selectedDiary = diary;//this.diaryService.getDiary(this.selectedDiaryId);
   }
 
   onDeleteDiary(diary: Diary) {

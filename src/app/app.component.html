@@ -45,7 +45,7 @@
           <app-diary-form *ngIf="selectedDiaryId === 0"></app-diary-form>
           <app-diary-item
             *ngIf="!!selectedDiaryId"
-            [diary]="$selectedDiary | async"
+            [diary]="selectedDiary"
           ></app-diary-item>
         </div>
       </div>
